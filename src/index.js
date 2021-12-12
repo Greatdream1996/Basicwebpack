@@ -1,6 +1,4 @@
 import './index.less'
-import './two.less'
-require('./1.jpg')
-require('./2.jpg')
-console.log('indexss')
-// document.body.style.backgroundColor='black'
+// import './0_basicTemplate'
+// import './1_transformObject'
+import './2_animations'
