@@ -1,4 +1,7 @@
 import './index.less'
 // import './0_basicTemplate'
 // import './1_transformObject'
-import './2_animations'
+// import './2_animations'
+// import './03_cameras'
+// import './04_fullScreen'
+import './05_geometry'
