@@ -1,6 +1,7 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const devMode = process.argv.indexOf('--mode=production') === -1
 module.exports = {
@@ -16,12 +17,14 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use:[{
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
           }
-        }],
+        ],
         exclude: /node_modules/
       },
       {
@@ -103,6 +106,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [{ from: path.resolve(__dirname, '../static') }]
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html')
     }),

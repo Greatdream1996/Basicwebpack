@@ -4,16 +4,6 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 // document
 const canvas = document.querySelector('#webgl')
 
-const cursor = {
-  x: 0,
-  y: 0
-}
-
-window.addEventListener('mousemove', (e) => {
-  cursor.x = e.clientX / sizes.width - 0.5
-  cursor.y = e.clientY / sizes.height - 0.5
-})
-
 // scene
 const scene = new THREE.Scene()
 
